@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Include jQuery library -->
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="List.css">
+</head>
+<body>
+    <div class="container">
+        <h1>TO DO LIST</h1>
+        <div class="list">
+            <ul>
+                <li>
+                    <input type="checkbox" checked>
+                    <label>HTML</label>
+                </li>
+            </ul>
+            <form action="" name="toDoList">
+                <input type="text" name="ListItem" maxlength="25"/>
+            </form>
+            <div id="button" class="add"> + </div>
+        </div>
+    </div>
+    <script>
+        $(document).ready(function() {
+            $("#button").click(function() {
+                var toAdd = $("input[name=ListItem]").val();
+                // Append the new task using proper syntax
+                $("ul").append("<li><input type='checkbox'><label>" + toAdd + "</label></li>");
+            });
+        });
+    </script>
+</body>
+</html>
